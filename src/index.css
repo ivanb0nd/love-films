@@ -1,0 +1,32 @@
+/* Variables */
+
+:root {
+	/* Colors */
+	--primary: #3d5afe;
+	--primary-dark: #0031ca;
+	--primary-light: #8187ff;
+}
+
+/* Fonts */
+
+@font-face {
+	font-family: 'Nunito';
+	src: url('./fonts/NunitoRegular.ttf');
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: 'Nunito';
+	src: url('./fonts/NunitoBold.ttf');
+	font-weight: bold;
+}
+
+/* General styles */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Nunito', sans-serif;
+	font-weight: bold;
+}
