@@ -9,9 +9,9 @@
 	--light-primary: #2196f3;
 
 	/* Dark theme */
-	--light-bg: #111111;
-	--light-secondary-bg: #333333;
-	--light-primary: #8a21f3;
+	--dark-bg: #111111;
+	--dark-secondary-bg: #333333;
+	--dark-primary: #8a21f3;
 }
 
 /* Fonts */
