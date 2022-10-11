@@ -7,11 +7,13 @@
 	--light-bg: #ffffff;
 	--light-secondary-bg: #f6f6f6;
 	--light-primary: #2196f3;
+	--light-text: #000000;
 
 	/* Dark theme */
 	--dark-bg: #111111;
 	--dark-secondary-bg: #333333;
 	--dark-primary: #8a21f3;
+	--dark-text: #ffffff;
 }
 
 /* Fonts */
