@@ -2,9 +2,16 @@
 
 :root {
 	/* Colors */
-	--primary: #3d5afe;
-	--primary-dark: #0031ca;
-	--primary-light: #8187ff;
+
+	/* Light theme */
+	--light-bg: #ffffff;
+	--light-secondary-bg: #f6f6f6;
+	--light-primary: #2196f3;
+
+	/* Dark theme */
+	--light-bg: #111111;
+	--light-secondary-bg: #333333;
+	--light-primary: #8a21f3;
 }
 
 /* Fonts */
