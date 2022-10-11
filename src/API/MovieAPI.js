@@ -12,12 +12,12 @@ const onlineMovieAPI = axios.create({
 
 export default class movieAPI {
 	static async getMoviesByGenre(genre, page, moviesType, keyword,) {
-		const response = onlineMovieAPI.get(`films?genres=${genre}&page=${page}&type=${moviesType}&keyword=${keyword}`);
+		const response = await onlineMovieAPI.get(`films?genres=${genre}&page=${page}&type=${moviesType}&keyword=${keyword}`);
 		return response;
 	}
 
 	static async getPopularMovies(page) {
-		const response = onlineMovieAPI.get(`films/top?type=TOP_100_POPULAR_FILMS&page=${page}`)
+		const response = await onlineMovieAPI.get(`films/top?type=TOP_100_POPULAR_FILMS&page=${page}`)
 		return response;
 	}
 }
