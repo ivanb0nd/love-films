@@ -1,0 +1,11 @@
+.logo {
+	display: flex;
+	gap: 3px;
+	font-size: 24px;
+	padding: 10px 0;
+}
+
+.logoIcon {
+	width: 17px;
+	fill: var(--light-primary);
+}
