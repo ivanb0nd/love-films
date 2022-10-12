@@ -4,8 +4,8 @@
 	/* Colors */
 
 	/* Light theme */
-	--light-bg: #ffffff;
-	--light-secondary-bg: #f6f6f6;
+	--light-bg: #f6f6f6;
+	--light-secondary-bg: #ececec;
 	--light-primary: #2196f3;
 	--light-text: #1f2937;
 
@@ -13,7 +13,7 @@
 	--dark-bg: #111111;
 	--dark-secondary-bg: #333333;
 	--dark-primary: #8a21f3;
-	--dark-text: #ffffff;
+	--dark-text: #ececec;
 }
 
 /* Fonts */
