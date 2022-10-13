@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import ThemeSwitcher from '../Buttons/ThemeSwitcher/ThemeSwitcher'
 import classes from './Navbar.module.css'
-import MoonIcon from '../../icons/MoonIcon'
 
 const Navbar = () => {
 	return (
@@ -20,9 +20,7 @@ const Navbar = () => {
 					<NavLink className={({ isActive }) => isActive ? `${classes.navigationLink} ${classes.active}` : `${classes.navigationLink}`} to={'about'} >О приложении</NavLink>
 				</li>
 			</ul>
-			<button className={classes.themeButton}>
-				<MoonIcon className={classes.themeButtonIcon} />
-			</button>
+			<ThemeSwitcher />
 		</nav>
 	)
 }

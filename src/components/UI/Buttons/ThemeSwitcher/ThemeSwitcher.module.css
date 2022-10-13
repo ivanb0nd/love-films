@@ -1,0 +1,30 @@
+.themeButton {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	padding: 10px;
+	border: none;
+	background-color: transparent;
+	width: 45px;
+	height: 45px;
+}
+
+.darkThemeButtonIcon {
+	width: 20px;
+	fill: rgba(0, 0, 0, .5);
+	transition: fill .2s linear;
+}
+
+.themeButton:hover .darkThemeButtonIcon {
+	fill: rgba(0, 0, 0, 1);
+}
+
+.lightThemeButtonIcon {
+	fill: rgba(255, 255, 255, 0.5);
+	transition: fill .2s linear;
+}
+
+.themeButton:hover .lightThemeButtonIcon {
+	fill: rgb(255, 255, 255);
+}
