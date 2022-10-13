@@ -11,7 +11,7 @@ const Navbar = () => {
 					<NavLink className={({ isActive }) => isActive ? `${classes.navigationLink} ${classes.active}` : `${classes.navigationLink}`} to={'home'} >Главная</NavLink>
 				</li>
 				<li>
-					<NavLink className={({ isActive }) => isActive ? `${classes.navigationLink} ${classes.active}` : `${classes.navigationLink}`} to={'favorite'} >Избранное</NavLink>
+					<NavLink className={({ isActive }) => isActive ? `${classes.navigationLink} ${classes.active}` : `${classes.navigationLink}`} to={'favorites'} >Избранное</NavLink>
 				</li>
 				<li>
 					<NavLink className={({ isActive }) => isActive ? `${classes.navigationLink} ${classes.active}` : `${classes.navigationLink}`} to={'popular'} >Популярное</NavLink>
