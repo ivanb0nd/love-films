@@ -1,11 +1,17 @@
 /* -Variables- */
 
+:root {
+	--container-width: 1416px;
+	--container-padding: 10px;
+}
+
 /* Light theme variables */
 :root.light {
 	--background: #f6f6f6;
 	--background-secondary: #ececec;
 	--primary: #2196f3;
 	--text: #1f2937;
+	--footer-border: #ececec;
 }
 
 /* Dark theme variables */
@@ -14,6 +20,7 @@
 	--background-secondary: #333333;
 	--primary: #8a21f3;
 	--text: #ececec;
+	--footer-border: #1d1d1d;
 }
 
 /* Fonts */
