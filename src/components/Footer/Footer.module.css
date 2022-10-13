@@ -1,0 +1,38 @@
+.footer {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	border-top: 1px solid var(--footer-border);
+}
+
+.footerList {
+	display: flex;
+	align-items: center;
+	list-style: none;
+
+}
+
+.footerItem {
+	padding: 1rem;
+}
+
+.footerItem:last-child {
+	margin-left: auto;
+}
+
+.footerLink {
+	text-decoration: none;
+	color: var(--primary);
+	background-color: transparent;
+	transition: color .1s linear, background .1s linear;
+}
+
+.footerLink:hover {
+	color: var(--text);
+	background-color: var(--primary);
+}
+
+.reactIcon {
+	color: var(--primary)
+}
