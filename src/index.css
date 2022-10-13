@@ -1,19 +1,19 @@
-/* Variables */
+/* -Variables- */
 
-:root {
-	/* Colors */
+/* Light theme variables */
+:root.light {
+	--background: #f6f6f6;
+	--background-secondary: #ececec;
+	--primary: #2196f3;
+	--text: #1f2937;
+}
 
-	/* Light theme */
-	--light-bg: #f6f6f6;
-	--light-secondary-bg: #ececec;
-	--light-primary: #2196f3;
-	--light-text: #1f2937;
-
-	/* Dark theme */
-	--dark-bg: #111111;
-	--dark-secondary-bg: #333333;
-	--dark-primary: #8a21f3;
-	--dark-text: #ececec;
+/* Dark theme variables */
+:root.dark {
+	--background: #111111;
+	--background-secondary: #333333;
+	--primary: #8a21f3;
+	--text: #ececec;
 }
 
 /* Fonts */
@@ -37,4 +37,10 @@
 	padding: 0;
 	box-sizing: border-box;
 	font-family: 'Nunito', sans-serif;
+}
+
+body {
+	background: var(--background);
+	color: var(--text);
+	transition: all .1s linear;
 }
