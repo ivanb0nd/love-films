@@ -16,7 +16,9 @@ function App() {
 		<ThemeContext.Provider value={{ theme, setTheme }}>
 			<Header />
 			<div className="wrapper">
-				<AppRouter />
+				<div className="container">
+					<AppRouter />
+				</div>
 			</div>
 			<Footer />
 		</ThemeContext.Provider>
