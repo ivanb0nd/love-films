@@ -3,6 +3,7 @@
 :root {
 	--container-width: 1416px;
 	--container-padding: 10px;
+	--border-radius: .65rem;
 }
 
 /* Light theme variables */
@@ -44,6 +45,10 @@
 	padding: 0;
 	box-sizing: border-box;
 	font-family: 'Nunito', sans-serif;
+}
+
+*:focus {
+	outline: 2px solid var(--primary);
 }
 
 body {
