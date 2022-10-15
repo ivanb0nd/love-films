@@ -1,0 +1,61 @@
+.itemButton {
+	position: relative;
+	font-size: 1rem;
+	font-weight: bold;
+	border: none;
+	background-color: transparent;
+	color: var(--text);
+	cursor: pointer;
+	width: 100%;
+	display: flex;
+	margin-bottom: .60rem;
+}
+
+.itemButton:after {
+	content: '';
+	position: absolute;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 0;
+	height: 0;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 5px solid var(--text);
+	transition: transform .1s linear;
+	border-radius: 1rem;
+}
+
+.sidebarItem.isOpen .itemButton:after {
+	transform: translateY(-50%) rotate(180deg);
+}
+
+
+.optionList {
+	list-style: none;
+	visibility: hidden;
+	height: 0;
+	opacity: 0;
+	transition: opacity .2s linear;
+}
+
+.sidebarItem.isOpen .optionList {
+	flex-direction: column;
+	visibility: visible;
+	height: auto;
+	opacity: 1;
+}
+
+.link {
+	padding: .25rem .5rem;
+	display: flex;
+	color: var(--text);
+	text-decoration: none;
+	border-radius: var(--border-radius);
+	background-color: transparent;
+	transition: background-color .1s linear;
+}
+
+.link:hover {
+	background-color: var(--background-secondary);
+}

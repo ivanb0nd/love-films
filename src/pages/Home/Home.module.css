@@ -1,0 +1,22 @@
+.home {
+	display: grid;
+	grid-template-columns: 1fr 6fr;
+	grid-template-rows: auto 1fr;
+	gap: 1.25rem 0;
+	min-height: 100%;
+}
+
+.searchInput {
+	grid-row: 1 / 2;
+	grid-column: 2 / 3;
+}
+
+.sidebar {
+	grid-row: 2 / 3;
+	grid-column: 1 / 2;
+}
+
+.main {
+	grid-row: 2 / 3;
+	grid-column: 2 / 3;
+}
