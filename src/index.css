@@ -4,6 +4,7 @@
 	--container-width: 1416px;
 	--container-padding: 10px;
 	--border-radius: .65rem;
+	--main-padding: 2.5rem;
 }
 
 /* Light theme variables */
@@ -13,6 +14,7 @@
 	--primary: #2196f3;
 	--text: #1f2937;
 	--footer-border: #ececec;
+	--scrollbar: #8b8b8b;
 }
 
 /* Dark theme variables */
@@ -22,6 +24,7 @@
 	--primary: #8a21f3;
 	--text: #ececec;
 	--footer-border: #1d1d1d;
+	--scrollbar: #818181;
 }
 
 /* Fonts */
@@ -47,10 +50,6 @@
 	font-family: 'Nunito', sans-serif;
 }
 
-*:focus {
-	outline: 2px solid var(--primary);
-}
-
 body {
 	background: var(--background);
 	color: var(--text);
@@ -62,4 +61,21 @@ body {
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-template-rows: auto 1fr auto;
+}
+
+::-webkit-scrollbar {
+	width: 6px;
+}
+
+::-webkit-scrollbar-button {
+	display: none;
+}
+
+::-webkit-scrollbar-track-piece {
+	background: var(--background-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--scrollbar);
+	border-radius: .25rem;
 }
