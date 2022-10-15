@@ -6,4 +6,11 @@
 	max-width: var(--container-width);
 	margin: 0 auto;
 	padding: 0 var(--container-padding);
+	height: 100%;
+}
+
+main {
+	background: var(--background-secondary);
+	border-radius: var(--border-radius);
+	padding: var(--main-padding);
 }
