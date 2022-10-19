@@ -6,6 +6,7 @@ import Error from "../pages/Error/Error";
 
 export const routes = [
 	{ path: '/home', element: <Home /> },
+	{ path: '/home/:genre', element: <Home /> },
 	{ path: '/favorites', element: <Favorites /> },
 	{ path: '/popular', element: <Popular /> },
 	{ path: '/about', element: <About /> },
