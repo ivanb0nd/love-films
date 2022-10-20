@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import classes from './SidebarItem.module.css'
 
-const SidebarItem = ({ item }) => {
-	const [isOpen, setIsOpen] = useState(false)
+const SidebarItem = ({ item, changeGenre }) => {
+	const [isOpen, setIsOpen] = useState(true)
 
 	return (
 		<div className={isOpen ? `${classes.sidebarItem} ${classes.isOpen}` : `${classes.sidebarItem}`}>
@@ -11,7 +11,7 @@ const SidebarItem = ({ item }) => {
 			<ul className={classes.optionList}>
 				{item.options.map((option) =>
 					<li className={classes.option} key={option.value}>
-						<Link className={classes.link} to={'/asd'}>{option.name}</Link >
+						<NavLink onClick={() => changeGenre(option.value)} className={({ isActive }) => isActive ? `${classes.link} ${classes.active}` : `${classes.link}`} to={`/home/${option.value}`}>{option.name}</NavLink>
 					</li>)}
 			</ul>
 		</div>

@@ -8,25 +8,33 @@ import movieAPI from '../../API/MovieAPI'
 import Movies from '../../components/Movies/Movies'
 
 const Home = () => {
-	const [movies, setMovies] = useState([]);
+	const [movies, setMovies] = useState([])
+	const [genre, setGenre] = useState(1)
+	const [page, setPage] = useState(1)
+	const [movieType, setMovieType] = useState('ALL')
 
-	const [fetchMovies, isMovieLoading, movieError] = useFetching(async () => {
-		const response = await movieAPI.getMoviesByGenre(1, 1, 'ALL')
+	const [fetchMovies, isMovieLoading, movieError] = useFetching(async (genre, page, movieType) => {
+		const response = await movieAPI.getMoviesByGenre(genre, page, movieType)
+		console.log(response)
 		setMovies(response.items)
 	})
 
-	useEffect(() => {
-		fetchMovies();
-	}, [])
+	function changeGenre(genre) {
+		setPage(1)
+		setGenre(genre)
+	}
 
-	console.log(movies)
+	useEffect(() => {
+		fetchMovies(genre, page, movieType)
+	}, [genre])
+
 	return (
 		<div className={classes.home}>
 			<div className={classes.searchInput}>
 				<CustomInput placeholder="Поиск любого фильма или сериала" />
 			</div>
 			<div className={classes.sidebar}>
-				<Sidebar />
+				<Sidebar genre={genre} changeGenre={changeGenre} />
 			</div>
 			<main className={classes.main}>
 				{

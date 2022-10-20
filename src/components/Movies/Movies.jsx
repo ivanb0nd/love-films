@@ -1,9 +1,8 @@
 import React from 'react'
-import MovieItem from '../UI/MovieItem/MovieItem'
+import MovieItem from '../UI/MovieItem/MovieCard'
 import classes from './Movies.module.css'
 
 const Movies = ({ movies }) => {
-	// console.log(movies)
 	return (
 		<div className={classes.movies}>
 			{
