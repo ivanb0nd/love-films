@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Sidebar from '../../components/Sidebar/Sidebar'
 import CustomInput from '../../components/UI/Input/CustomInput'
 import Loader from '../../components/UI/Loader/Loader'
@@ -6,17 +6,20 @@ import { useFetching } from '../../hooks/useFetching'
 import classes from './Home.module.css'
 import movieAPI from '../../API/MovieAPI'
 import Movies from '../../components/Movies/Movies'
+import { useInfiniteLoading } from '../../hooks/useInfiniteLoading'
 
 const Home = () => {
 	const [movies, setMovies] = useState([])
 	const [genre, setGenre] = useState(1)
 	const [page, setPage] = useState(1)
 	const [movieType, setMovieType] = useState('ALL')
+	const [totalPages, setTotalPages] = useState(1)
+	const infiniteLoadingContainer = useRef();
 
 	const [fetchMovies, isMovieLoading, movieError] = useFetching(async (genre, page, movieType) => {
 		const response = await movieAPI.getMoviesByGenre(genre, page, movieType)
-		console.log(response)
-		setMovies(response.items)
+		setTotalPages(response.totalPages)
+		setMovies([...movies, ...response.items])
 	})
 
 	function changeGenre(genre) {
@@ -26,7 +29,12 @@ const Home = () => {
 
 	useEffect(() => {
 		fetchMovies(genre, page, movieType)
-	}, [genre])
+	}, [genre, page, movieType])
+
+	useInfiniteLoading(infiniteLoadingContainer, page < totalPages, isMovieLoading, () => setPage(page + 1))
+
+
+
 
 	return (
 		<div className={classes.home}>
@@ -40,9 +48,10 @@ const Home = () => {
 				{
 					movieError && <h1>Error {movieError}</h1>
 				}
-				{isMovieLoading
-					? <div className={classes.loaderWrapper}><Loader /></div>
-					: <Movies movies={movies} />
+				<Movies setPage={setPage} page={page} movies={movies} />
+				<div ref={infiniteLoadingContainer} ></div>
+				{isMovieLoading &&
+					<div className={classes.loaderWrapper}><Loader /></div>
 				}
 			</main>
 		</div>
