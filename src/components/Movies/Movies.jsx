@@ -1,5 +1,5 @@
 import React from 'react'
-import MovieItem from '../UI/MovieItem/MovieCard'
+import MovieCard from '../UI/MovieCard/MovieCard'
 import classes from './Movies.module.css'
 
 const Movies = ({ movies }) => {
@@ -10,7 +10,7 @@ const Movies = ({ movies }) => {
 				{
 					movies.map(movie => {
 						return <li key={movie.kinopoiskId}>
-							<MovieItem movie={movie} />
+							<MovieCard movie={movie} />
 						</li>
 					})
 				}
