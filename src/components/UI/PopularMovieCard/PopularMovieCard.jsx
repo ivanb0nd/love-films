@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import classes from './MovieCard.module.css'
+import classes from './PopularMovieCard.module.css'
 import StarIcon from '../../icons/StarIcon'
 import HeartIcon from '../../icons/HeartIcon'
 
-const MovieItem = ({ movie }) => {
+const PopularMovieCard = ({ movie }) => {
 	return (
 		<Link className={classes.item} to={'/asdf'}>
 			<div className={classes.movie}>
@@ -16,7 +16,7 @@ const MovieItem = ({ movie }) => {
 					<h1 className={classes.title}>{movie.nameRu}</h1>
 					<div className={classes.rating}>
 						<StarIcon className={classes.ratingIcon} />
-						<span>{movie.ratingKinopoisk}</span>
+						<span>{movie.rating}</span>
 					</div>
 				</div>
 			</div>
@@ -24,4 +24,4 @@ const MovieItem = ({ movie }) => {
 	)
 }
 
-export default MovieItem
+export default PopularMovieCard

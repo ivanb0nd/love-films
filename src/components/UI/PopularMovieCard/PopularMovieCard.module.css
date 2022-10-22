@@ -14,7 +14,7 @@
 
 .poster {
 	position: relative;
-	height: 320px;
+	height: 300px;
 	border-radius: var(--border-radius);
 	overflow: hidden;
 }
