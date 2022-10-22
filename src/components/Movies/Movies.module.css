@@ -1,4 +1,4 @@
-.movies {
+.moviesList {
 	display: grid;
 	grid-template-columns: repeat(5, minmax(200px, 1fr));
 	grid-template-rows: auto;

@@ -5,8 +5,8 @@ import classes from './Movies.module.css'
 const Movies = ({ movies }) => {
 
 	return (
-		<div className={classes.moviesList}>
-			<ul className={classes.movies}>
+		<div className={classes.movies}>
+			<ul className={classes.moviesList}>
 				{
 					movies.map(movie => {
 						return <li key={movie.kinopoiskId}>
