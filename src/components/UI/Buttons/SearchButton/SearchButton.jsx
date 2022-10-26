@@ -4,7 +4,7 @@ import classes from './SearchButton.module.css'
 
 const SearchButton = ({ ...props }) => {
 	return (
-		<button {...props} className={classes.searchButton}>
+		<button type='submit' {...props} className={classes.searchButton}>
 			<SearchIcon className={classes.searchIcon} />
 		</button>
 	)
