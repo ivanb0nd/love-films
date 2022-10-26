@@ -11,7 +11,7 @@ const onlineMovieAPI = axios.create({
 })
 
 export default class movieAPI {
-	static async getMoviesByGenre(genre, page, moviesType, keyword = '',) {
+	static async getMoviesByGenre(genre, page, moviesType, keyword = '') {
 		const response = await onlineMovieAPI.get(`films?genres=${genre}&page=${page}&type=${moviesType}&keyword=${keyword}`);
 		return response.data;
 	}
