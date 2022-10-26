@@ -16,7 +16,7 @@ const MovieCard = ({ movie }) => {
 					<h1 className={classes.title}>{movie.nameRu}</h1>
 					<div className={classes.rating}>
 						<StarIcon className={classes.ratingIcon} />
-						<span>{movie.ratingKinopoisk}</span>
+						<span>{movie.ratingKinopoisk ? movie.ratingKinopoisk : movie.rating ? movie.rating : movie.ratingImdb ? movie.ratingImdb : 'без рейтинга'}</span>
 					</div>
 				</div>
 			</div>
