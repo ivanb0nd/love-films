@@ -6,9 +6,15 @@
 	min-height: 100%;
 }
 
-.searchInput {
+.searchForm {
 	grid-row: 1 / 2;
 	grid-column: 2 / 3;
+	display: flex;
+}
+
+.searchForm input {
+	border-bottom-right-radius: 0;
+	border-top-right-radius: 0;
 }
 
 .sidebar {
@@ -19,11 +25,15 @@
 .main {
 	grid-row: 2 / 3;
 	grid-column: 2 / 3;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 3rem;
 }
 
 .loaderWrapper {
 	width: 100%;
-	margin-top: 4rem;
+	flex-grow: 1;
 	display: flex;
 	align-items: center;
 	justify-content: center;
