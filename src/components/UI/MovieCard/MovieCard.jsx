@@ -13,10 +13,14 @@ const MovieCard = ({ movie }) => {
 					<button className={classes.favoritesButton}><HeartIcon className={classes.favoritesButtonIcon} /></button>
 				</div>
 				<div className={classes.info}>
-					<h1 className={classes.title}>{movie.nameRu}</h1>
+					<h1 className={classes.title}>
+						{movie.nameRu ? movie.nameRu : movie.nameOriginal}
+					</h1>
 					<div className={classes.rating}>
 						<StarIcon className={classes.ratingIcon} />
-						<span>{movie.ratingKinopoisk ? movie.ratingKinopoisk : movie.rating ? movie.rating : movie.ratingImdb ? movie.ratingImdb : 'без рейтинга'}</span>
+						<span>
+							{movie.ratingKinopoisk ? movie.ratingKinopoisk : movie.rating ? movie.rating : movie.ratingImdb ? movie.ratingImdb : 'без рейтинга'}
+						</span>
 					</div>
 				</div>
 			</div>
