@@ -34,7 +34,7 @@ const Home = () => {
 
 	useEffect(() => {
 		fetchMovies(searchParams.genre, searchParams.page, searchParams.movieType, searchParams.keyword)
-	}, [searchParams.genre, searchParams.page, searchParams.movieType, searchParams.keyword, fetchMovies])
+	}, [searchParams.genre, searchParams.page, searchParams.movieType, searchParams.keyword])
 
 	function searchByKeyword(event) {
 		event.preventDefault()
