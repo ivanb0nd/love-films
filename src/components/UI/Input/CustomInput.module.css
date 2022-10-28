@@ -11,21 +11,11 @@
 }
 
 .customInput:focus {
-	outline: 2px solid var(--primary);
+	outline: none;
+	box-shadow: inset 0px 0px 0px 1px var(--primary);
 }
 
 .customInput::placeholder {
 	color: var(--text);
 	opacity: .5;
-	position: relative;
-}
-
-.customInput::placeholder::before {
-	content: '';
-	position: absolute;
-	right: 0;
-	top: 0;
-	width: 20px;
-	height: 20px;
-	background-color: red;
 }
