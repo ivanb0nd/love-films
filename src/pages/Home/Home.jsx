@@ -29,7 +29,8 @@ const Home = () => {
 		setSearchParams({ ...searchParams, page: pageNumber })
 	}
 
-	const changeGenre = () => {
+	const changeGenre = (genreId) => {
+		setSearchParams({ ...searchParams, genre: genreId })
 	}
 
 	useEffect(() => {

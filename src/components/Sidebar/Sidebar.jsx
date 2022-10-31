@@ -2,7 +2,7 @@ import React from 'react'
 import SidebarItem from '../UI/SidebarItem/SidebarItem'
 import classes from './Sidebar.module.css'
 
-const Sidebar = ({ changeGenre }) => {
+const Sidebar = ({ genre, changeGenre }) => {
 	const sidebarData = [
 		{
 			title: 'Жанры', options: [
@@ -31,7 +31,7 @@ const Sidebar = ({ changeGenre }) => {
 
 	return (
 		<aside className={classes.sidebar}>
-			{sidebarData.map(item => <SidebarItem changeGenre={changeGenre} key={item.title} item={item} />)}
+			{sidebarData.map(item => <SidebarItem genre={genre} changeGenre={changeGenre} key={item.title} item={item} />)}
 		</aside>
 	)
 }
