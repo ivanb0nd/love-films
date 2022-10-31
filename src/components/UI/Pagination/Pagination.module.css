@@ -20,5 +20,6 @@
 }
 
 .button.active {
-	background: var(--primary);
+	background-color: var(--primary);
+	color: #ececec;
 }
