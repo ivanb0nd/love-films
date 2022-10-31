@@ -1,0 +1,30 @@
+.sidebarButton {
+	cursor: pointer;
+	border: none;
+	font-size: 1rem;
+	width: 100%;
+	position: relative;
+	padding: .25rem .5rem;
+	display: flex;
+	color: var(--text);
+	text-decoration: none;
+	border-radius: var(--border-radius);
+	background-color: transparent;
+	transition: background-color .1s linear;
+}
+
+.sidebarButton.active::before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: -10px;
+	width: 6px;
+	height: 6px;
+	background-color: var(--primary);
+	transform: translateY(-50%);
+	border-radius: 50%;
+}
+
+.sidebarButton:hover {
+	background-color: var(--background-secondary);
+}
