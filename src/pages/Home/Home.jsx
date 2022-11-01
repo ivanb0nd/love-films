@@ -6,6 +6,7 @@ import SearchButton from '../../components/UI/Buttons/SearchButton/SearchButton'
 import CustomInput from '../../components/UI/Input/CustomInput'
 import Loader from '../../components/UI/Loader/Loader'
 import Pagination from '../../components/UI/Pagination/Pagination'
+import RadioButtons from '../../components/UI/RadioButtons/RadioButtons'
 import { useFetching } from '../../hooks/useFetching'
 import classes from './Home.module.css'
 
@@ -13,10 +14,10 @@ const Home = () => {
 	const [movies, setMovies] = useState([])
 	const [totalPages, setTotalPages] = useState(1)
 	const [formingKeyword, setFormingKeyword] = useState('');
-	const [searchParams, setSearchParams] = useState({ page: 1, genre: 3, movieType: 'ALL', keyword: '' })
+	const [searchParams, setSearchParams] = useState({ page: 1, genre: 3, movieType: 'ALL', keyword: '', order: 'NUM_VOTE' })
 
-	const [fetchMovies, isMoviesLoading, moviesError] = useFetching(async (genre, page, movieType, keyword) => {
-		const response = await movieAPI.getMoviesByGenre(genre, page, movieType, keyword)
+	const [fetchMovies, isMoviesLoading, moviesError] = useFetching(async (genre, page, movieType, keyword, order) => {
+		const response = await movieAPI.getMoviesByGenre(genre, page, movieType, keyword, order)
 		setTotalPages(response.totalPages)
 		setMovies(response.items)
 	})
@@ -33,9 +34,13 @@ const Home = () => {
 		setSearchParams({ ...searchParams, genre: genreId })
 	}
 
+	const changeMoviesType = (moviesType) => {
+		setSearchParams({ ...searchParams, movieType: moviesType })
+	}
+
 	useEffect(() => {
-		fetchMovies(searchParams.genre, searchParams.page, searchParams.movieType, searchParams.keyword)
-	}, [searchParams.genre, searchParams.page, searchParams.movieType, searchParams.keyword])
+		fetchMovies(searchParams.genre, searchParams.page, searchParams.movieType, searchParams.keyword, searchParams.order)
+	}, [searchParams.genre, searchParams.page, searchParams.movieType, searchParams.keyword, searchParams.order])
 
 	function searchByKeyword(event) {
 		event.preventDefault()
@@ -58,6 +63,19 @@ const Home = () => {
 				<Sidebar genre={searchParams.genre} changeGenre={changeGenre} />
 			</div>
 			<main className={classes.main}>
+				<div className={classes.sortingFilters}>
+					<RadioButtons
+						canChange={isMoviesLoading}
+						moviesType={searchParams.movieType}
+						name={'moviesType'}
+						changeMoviesType={changeMoviesType}
+						buttons={[
+							{ value: 'ALL', text: 'Все' },
+							{ value: 'FILM', text: 'Фильмы' },
+							{ value: 'TV_SERIES', text: 'Сериалы' }
+						]}
+					/>
+				</div>
 				{
 					moviesError && <h1>Error {moviesError}</h1>
 				}
