@@ -1,8 +1,28 @@
 .button {
+	position: relative;
 	background-color: var(--primary);
 	color: #ececec;
-	padding: .75rem 1rem;
+	padding: .5rem 1rem;
 	cursor: pointer;
+	overflow: hidden;
+	display: flex;
+}
+
+.button::before {
+	content: '';
+	height: 2px;
+	width: 0;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	border-radius: var(--border-radius);
+	border-bottom: 1px solid var(--text);
+	transition: width .1s linear;
+}
+
+.button:hover::before {
+	width: 100%;
 }
 
 .button:first-child {
@@ -17,7 +37,6 @@
 
 .button.active {
 	background: var(--primary-darker);
-
 }
 
 .radioButtons {
