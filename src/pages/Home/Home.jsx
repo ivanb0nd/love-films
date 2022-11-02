@@ -3,6 +3,7 @@ import movieAPI from '../../API/MovieAPI'
 import Movies from '../../components/Movies/Movies'
 import Sidebar from '../../components/Sidebar/Sidebar'
 import SearchButton from '../../components/UI/Buttons/SearchButton/SearchButton'
+import CustomSelect from '../../components/UI/CustomSelect/CustomSelect'
 import CustomInput from '../../components/UI/Input/CustomInput'
 import Loader from '../../components/UI/Loader/Loader'
 import Pagination from '../../components/UI/Pagination/Pagination'
@@ -22,10 +23,6 @@ const Home = () => {
 		setMovies(response.items)
 	})
 
-	const resetToDefaultSearchParams = () => {
-		setSearchParams({ page: 1, genre: 1, movieType: 'ALL', keyword: '' })
-	}
-
 	const changePage = (pageNumber) => {
 		setSearchParams({ ...searchParams, page: pageNumber })
 	}
@@ -36,6 +33,10 @@ const Home = () => {
 
 	const changeMoviesType = (moviesType) => {
 		setSearchParams({ ...searchParams, movieType: moviesType })
+	}
+
+	const changeSortingOrder = (orderType) => {
+		setSearchParams({ ...searchParams, order: orderType })
 	}
 
 	useEffect(() => {
@@ -73,6 +74,16 @@ const Home = () => {
 							{ value: 'ALL', text: 'Все' },
 							{ value: 'FILM', text: 'Фильмы' },
 							{ value: 'TV_SERIES', text: 'Сериалы' }
+						]}
+					/>
+					<CustomSelect
+						value={searchParams.order}
+						onChange={changeSortingOrder}
+						defaultValue={'Сортировать по'}
+						options={[
+							{ value: 'RATING', name: 'Рейтингу' },
+							{ value: 'NUM_VOTE', name: 'Количеству голосов' },
+							{ value: 'YEAR', name: 'Году' }
 						]}
 					/>
 				</div>
