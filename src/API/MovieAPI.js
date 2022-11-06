@@ -17,7 +17,12 @@ export default class movieAPI {
 	}
 
 	static async getPopularMovies(page) {
-		const response = await onlineMovieAPI.get(`films/top?type=TOP_100_POPULAR_FILMS&page=${page}`)
+		const response = await onlineMovieAPI.get(`films/top?type=TOP_100_POPULAR_FILMS&page=${page}`);
+		return response.data;
+	}
+
+	static async getMovieById(movieId) {
+		const response = await onlineMovieAPI.get(`films/${movieId}`);
 		return response.data;
 	}
 }
