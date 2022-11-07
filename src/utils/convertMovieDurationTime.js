@@ -9,5 +9,3 @@ export const convertMovieDurationTime = (timeInMinutes) => {
 
 	return `${hours}:${movieDurationInMinutes}`
 }
-
-console.log(convertMovieDurationTime(233))
