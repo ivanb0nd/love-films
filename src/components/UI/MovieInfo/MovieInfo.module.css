@@ -1,0 +1,132 @@
+.movieInfo {
+	display: grid;
+	grid-template-columns: 320px 1fr;
+	gap: 4rem;
+}
+
+.left {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.poster {
+	border-radius: var(--border-radius);
+	overflow: hidden;
+	height: 500px;
+}
+
+.poster img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.rating {
+	display: flex;
+	align-items: center;
+	gap: .75rem;
+	font-size: 1.2rem;
+}
+
+.rating span {
+	opacity: .7;
+	vertical-align: middle;
+}
+
+.titleSection {
+	margin-bottom: .25rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.title {
+	display: flex;
+	align-items: center;
+	gap: .5rem;
+	letter-spacing: -.2px;
+}
+
+.ageLimit {
+	font-weight: normal;
+	font-size: .9rem;
+	opacity: .55;
+	border-radius: 5px;
+	margin-top: 2px;
+	padding: 0 0.25rem;
+	border: 1px solid var(--text)
+}
+
+.ratingIcon {
+	fill: var(--primary);
+	width: 20px;
+}
+
+.movieType {
+	text-transform: uppercase;
+	background-color: #fff;
+	border-radius: var(--border-radius);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: .25rem .5rem;
+	align-self: center;
+	font-size: .9rem;
+	background-color: var(--primary-darker);
+	color: rgba(255, 255, 255, .85);
+}
+
+.promoDescription {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	list-style: none;
+	font-size: 1.1rem;
+	opacity: .8;
+	margin-bottom: 1.25rem;
+}
+
+.genres {
+	text-transform: capitalize;
+}
+
+.countries {
+	text-transform: capitalize;
+}
+
+.description {
+	margin-bottom: 2rem;
+}
+
+.kinopoiskLink {
+	display: inline-block;
+	position: relative;
+	text-decoration: none;
+	border: 2px solid var(--primary);
+	color: var(--text);
+	border-radius: 5px;
+	padding: 0.5rem 1rem;
+	transition: color .1s linear;
+	z-index: 0;
+}
+
+.kinopoiskLink::before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 0;
+	background-color: var(--primary);
+	z-index: -1;
+	transition: height .1s ease-in-out;
+}
+
+.kinopoiskLink:hover.kinopoiskLink::before {
+	height: 100%;
+}
+
+.kinopoiskLink:hover {
+	color: #ececec;
+}
