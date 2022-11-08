@@ -27,7 +27,7 @@ export default class movieAPI {
 	}
 
 	static async getStaffInfoById(movieId) {
-		const response = await onlineMovieAPI.get(`staff?filmId=${movieId}`);
+		const response = await onlineMovieAPI.get(`films/${movieId}/images?type=STILL&page=1`);
 		return response.data;
 	}
 }
