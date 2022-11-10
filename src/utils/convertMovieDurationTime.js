@@ -14,7 +14,5 @@ export const convertMovieDurationTime = (timeInMinutes) => {
 		minutes = movieDurationInMinutes
 	}
 
-
-
 	return `${hours}:${minutes}`
 }
