@@ -1,0 +1,107 @@
+.control {
+	display: flex;
+	justify-content: space-between;
+}
+
+.back {
+	cursor: pointer;
+	padding: 0.5rem 1.5rem;
+	border-radius: var(--border-radius);
+	border: none;
+	background-color: var(--primary);
+	transition: background-color .1s linear;
+}
+
+.favorite {
+	cursor: pointer;
+	width: 50px;
+	height: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: none;
+	background-color: rgba(0, 0, 0, .2);
+	border-radius: var(--border-radius);
+	transition: background-color .1s linear;
+}
+
+.favorite:hover {
+	background-color: rgba(0, 0, 0, .4);
+}
+
+.favoriteIcon {
+	width: 25px;
+	height: 25px;
+	fill: #ececec;
+}
+
+.error {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+}
+
+.error h1 {
+	opacity: 0.5;
+}
+
+.errorButton {
+	cursor: pointer;
+	border: none;
+	background-color: var(--primary);
+	border-radius: var(--border-radius);
+	color: var(--text);
+	font-size: 1rem;
+	padding: 0.5rem 1rem;
+	transition: background-color .1s linear;
+}
+
+.errorButton:hover {
+	background-color: var(--primary-darker);
+}
+
+.movie {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+
+.loaderWrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+}
+
+.loader {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+}
+
+.back:hover {
+	background-color: var(--primary-darker);
+}
+
+.arrow {
+	border: solid #ececec;
+	border-width: 0 3px 3px 0;
+	display: inline-block;
+	padding: 3px;
+}
+
+.left {
+	transform: rotate(135deg);
+	-webkit-transform: rotate(135deg);
+}
+
+.divider {
+	border: 1px solid var(--text);
+	opacity: .2;
+}
