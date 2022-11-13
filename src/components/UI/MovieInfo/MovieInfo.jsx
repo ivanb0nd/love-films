@@ -2,25 +2,24 @@ import React from 'react'
 import { convertMovieDurationTime } from '../../../utils/convertMovieDurationTime'
 import { getRatingAge } from '../../../utils/getRatingAge'
 import StarIcon from '../../icons/StarIcon'
+import Loader from '../Loader/Loader'
 import classes from './MovieInfo.module.css'
 
 const MovieInfo = ({ movieInfo }) => {
+	if (Object.keys(movieInfo).length === 0) return <Loader />
+
 	return (
-		<div className={classes.movieInfo}>
+		<div className={classes.container}>
 			<div className={classes.left}>
 				<div className={classes.poster}>
-					<img src={movieInfo.posterUrlPreview} alt="" />
-				</div>
-				<div className={classes.rating}>
-					<StarIcon className={classes.ratingIcon} />
-					<span>
-						{movieInfo.ratingKinopoisk}
-					</span>
+					<img src={movieInfo.posterUrlPreview} alt="Постер фильма" />
 				</div>
 			</div>
-			<div>
+			<div className={classes.movieInfo}>
 				<div className={classes.titleSection}>
-					<h1 className={classes.title}>{movieInfo.nameRu} <span className={classes.ageLimit}>{`${getRatingAge(movieInfo.ratingAgeLimits)}+`}</span></h1>
+					<h1 className={classes.title}>{movieInfo.nameRu}
+						{movieInfo.ratingAgeLimits && <span className={classes.ageLimit}>{`${getRatingAge(movieInfo.ratingAgeLimits)}+`}</span>}
+					</h1>
 					<span className={classes.movieType}>
 						{movieInfo.type.toLowerCase() === 'film' ? 'фильм' : 'сериал'}
 					</span>
@@ -33,6 +32,12 @@ const MovieInfo = ({ movieInfo }) => {
 				</ul>
 				<p className={classes.description}>{movieInfo.description}</p>
 				<a className={classes.kinopoiskLink} target='_blank' rel='noreferrer' href={movieInfo.webUrl}>Перейти на кинопоиск</a>
+				<div className={classes.rating}>
+					<span>
+						{movieInfo.ratingKinopoisk ? movieInfo.ratingKinopoisk : 'без рейтинга'}
+					</span>
+					<StarIcon className={classes.ratingIcon} />
+				</div>
 			</div>
 		</div>
 	)

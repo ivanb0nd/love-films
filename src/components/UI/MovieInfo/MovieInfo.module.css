@@ -1,10 +1,15 @@
-.movieInfo {
+.container {
 	display: grid;
 	grid-template-columns: 320px 1fr;
 	gap: 4rem;
 }
 
-.left {
+.movieInfo {
+	display: flex;
+	flex-direction: column;
+}
+
+ю .left {
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;
@@ -25,8 +30,11 @@
 .rating {
 	display: flex;
 	align-items: center;
-	gap: .75rem;
-	font-size: 1.2rem;
+	align-self: end;
+	gap: .5rem;
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin-top: auto;
 }
 
 .rating span {
@@ -60,7 +68,9 @@
 
 .ratingIcon {
 	fill: var(--primary);
-	width: 20px;
+	width: 25px;
+	height: 25px;
+	transform: translateY(-3px);
 }
 
 .movieType {
@@ -101,6 +111,7 @@
 
 .kinopoiskLink {
 	display: inline-block;
+	align-self: start;
 	position: relative;
 	text-decoration: none;
 	border: 2px solid var(--primary);
