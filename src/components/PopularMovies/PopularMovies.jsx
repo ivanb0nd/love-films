@@ -19,32 +19,3 @@ const PopularMovies = ({ movies }) => {
 }
 
 export default PopularMovies
-
-/**
- {
-		"filmId": 4642708,
-		"nameRu": "Нулевой пациент",
-		"nameEn": null,
-		"year": "2022",
-		"filmLength": null,
-		"countries": [
-				{
-						"country": "Россия"
-				}
-		],
-		"genres": [
-				{
-						"genre": "драма"
-				},
-				{
-						"genre": "детектив"
-				}
-		],
-		"rating": "8.4",
-		"ratingVoteCount": 183440,
-		"posterUrl": "https://kinopoiskapiunofficial.tech/images/posters/kp/4642708.jpg",
-		"posterUrlPreview": "https://kinopoiskapiunofficial.tech/images/posters/kp_small/4642708.jpg",
-		"ratingChange": null
-} 
-  
- */
