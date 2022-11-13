@@ -1,20 +1,19 @@
 import React from 'react';
-import { Lazy, Navigation } from 'swiper';
+import { Lazy, Navigation, Mousewheel } from 'swiper';
 import 'swiper/css';
-import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import 'swiper/css/lazy'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import './FootageSlider.css';
 
 const FootageSlider = ({ footageData }) => {
 	return (
 		<Swiper
-			// install Swiper modules
 			freeMode={true}
-			modules={[Lazy, Navigation]}
+			modules={[Lazy, Navigation, Mousewheel]}
 			navigation
+			mousewheel={true}
 			lazy={true}
 			className='footageSlider'
 			spaceBetween={20}
@@ -39,12 +38,13 @@ const FootageSlider = ({ footageData }) => {
 
 			}}
 		>
-			{footageData.map(footage => <SwiperSlide>
+			{footageData.map((footage, index) => <SwiperSlide key={index}>
 				<div className='footageItem'>
-
 					<img
 						className="footageImage swiper-lazy"
-						data-src={footage.previewUrl} />
+						data-src={footage.previewUrl}
+					/>
+					<div className="swiper-lazy-preloader"></div>
 				</div>
 			</SwiperSlide>)}
 		</Swiper>
