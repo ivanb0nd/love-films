@@ -14,7 +14,7 @@ import classes from './Home.module.css'
 const Home = () => {
 	const [movies, setMovies] = useState([])
 	const [totalPages, setTotalPages] = useState(1)
-	const [formingKeyword, setFormingKeyword] = useState('');
+	const [formingKeyword, setFormingKeyword] = useState('')
 	const [searchParams, setSearchParams] = useState({ page: 1, genre: 3, movieType: 'ALL', keyword: '', order: 'NUM_VOTE' })
 
 	const [fetchMovies, isMoviesLoading, moviesError] = useFetching(async (genre, page, movieType, keyword, order) => {
@@ -61,7 +61,9 @@ const Home = () => {
 				<SearchButton />
 			</form>
 			<div className={classes.sidebar}>
-				<Sidebar genre={searchParams.genre} changeGenre={changeGenre} />
+				<Sidebar
+					genre={searchParams.genre}
+					changeGenre={changeGenre} />
 			</div>
 			<main className={classes.main}>
 				<div className={classes.sortingFilters}>
@@ -92,7 +94,9 @@ const Home = () => {
 				}
 				{isMoviesLoading
 					? <div className={classes.loaderWrapper}><Loader /></div>
-					: <Movies movies={movies} />
+					: <Movies
+						movies={movies}
+					/>
 				}
 				<Pagination
 					totalPage={totalPages}
