@@ -1,0 +1,12 @@
+.favoritesList {
+	display: grid;
+	grid-template-columns: repeat(6, minmax(190px, 1fr));
+	gap: var(--grid-gap);
+	list-style: none;
+}
+
+.empty {
+	text-align: center;
+	opacity: .5;
+	padding: 10rem 0;
+}
