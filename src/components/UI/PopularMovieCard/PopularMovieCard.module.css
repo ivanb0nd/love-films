@@ -41,6 +41,10 @@
 	border: none;
 }
 
+.favoritesButton.added .favoritesButtonIcon {
+	fill: var(--primary);
+}
+
 .favoritesButton:hover .favoritesButtonIcon {
 	opacity: 1;
 }
@@ -48,7 +52,7 @@
 .favoritesButtonIcon {
 	width: 22px;
 	fill: #ececec;
-	opacity: .7;
+	opacity: .85;
 	transition: opacity .1s linear;
 }
 

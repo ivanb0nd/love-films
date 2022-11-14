@@ -35,10 +35,14 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background: rgba(0, 0, 0, .6);
+	background-color: rgba(0, 0, 0, .6);
 	border-bottom-left-radius: var(--border-radius);
 	cursor: pointer;
 	border: none;
+}
+
+.favoritesButton.added .favoritesButtonIcon {
+	fill: var(--primary);
 }
 
 .favoritesButton:hover .favoritesButtonIcon {
@@ -48,8 +52,8 @@
 .favoritesButtonIcon {
 	width: 22px;
 	fill: #ececec;
-	opacity: .7;
-	transition: opacity .1s linear;
+	opacity: .85;
+	transition: opacity .1s linear, fill .1s linear;
 }
 
 .title {
