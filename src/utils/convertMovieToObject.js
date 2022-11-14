@@ -6,5 +6,7 @@ export const convertMovieToObject = (movie) => {
 		posterUrlPreview: movie.posterUrlPreview,
 		ratingImdb: movie.ratingImdb,
 		ratingKinopoisk: movie.ratingKinopoisk,
+		nameRu: movie.nameRu,
+		nameOriginal: movie.nameOriginal,
 	}
 }
