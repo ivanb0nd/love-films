@@ -3,24 +3,27 @@ import AppRouter from "./components/AppRouter/AppRouter";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import { useTheme } from "./hooks/useTheme";
+import { FavoritesContext } from "./providers/FavoritesProvider/FavoritesProvider";
 import { ThemeContext } from "./providers/ThemeProvider/ThemeProvider";
 import './styles/App.css'
 
 
 function App() {
 	const [theme, setTheme] = useState('light')
-
+	const [favorites, setFavorites] = useState([])
 	useTheme(theme, setTheme)
 
 	return (
 		<ThemeContext.Provider value={{ theme, setTheme }}>
-			<Header />
-			<div className="wrapper">
-				<div className="container">
-					<AppRouter />
+			<FavoritesContext.Provider value={{ favorites, setFavorites }}>
+				<Header />
+				<div className="wrapper">
+					<div className="container">
+						<AppRouter />
+					</div>
 				</div>
-			</div>
-			<Footer />
+				<Footer />
+			</FavoritesContext.Provider>
 		</ThemeContext.Provider>
 	);
 }
