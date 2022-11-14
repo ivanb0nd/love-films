@@ -2,6 +2,6 @@
 	display: grid;
 	grid-template-columns: repeat(6, minmax(190px, 1fr));
 	grid-template-rows: auto;
-	gap: 30px;
+	gap: var(--grid-gap);
 	list-style: none;
 }
