@@ -3,7 +3,6 @@ import FavoriteMovieCard from '../UI/FavoriteMovieCard/FavoriteMovieCard'
 import classes from './FavoritesMovies.module.css'
 
 const FavoritesMovies = ({ favorites, setFavorites }) => {
-	console.log(favorites)
 	if (!favorites.length) {
 		return (
 			<div className={classes.empty}>
