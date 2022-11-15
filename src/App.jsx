@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useEffect } from "react";
 import AppRouter from "./components/AppRouter/AppRouter";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
@@ -10,8 +11,17 @@ import './styles/App.css'
 
 function App() {
 	const [theme, setTheme] = useState('light')
-	const [favorites, setFavorites] = useState([])
+	const [favorites, setFavorites] = useState(() => {
+		const saved = localStorage.getItem('favorites')
+		const initialFavorites = JSON.parse(saved)
+		return initialFavorites || []
+	})
+
 	useTheme(theme, setTheme)
+
+	useEffect(() => {
+		localStorage.setItem('favorites', JSON.stringify(favorites))
+	}, [favorites])
 
 	return (
 		<ThemeContext.Provider value={{ theme, setTheme }}>
