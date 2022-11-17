@@ -15,7 +15,11 @@ const Home = () => {
 	const [movies, setMovies] = useState([])
 	const [totalPages, setTotalPages] = useState(1)
 	const [formingKeyword, setFormingKeyword] = useState('')
-	const [searchParams, setSearchParams] = useState({ page: 1, genre: 3, movieType: 'ALL', keyword: '', order: 'NUM_VOTE' })
+	const [searchParams, setSearchParams] = useState(() => {
+		const savedParams = localStorage.getItem('searchParams')
+		const initialParams = JSON.parse(savedParams)
+		return initialParams || { page: 1, genre: 3, movieType: 'ALL', keyword: '', order: 'NUM_VOTE' }
+	})
 
 	const [fetchMovies, isMoviesLoading, moviesError] = useFetching(async (genre, page, movieType, keyword, order) => {
 		const response = await movieAPI.getMoviesByGenre(genre, page, movieType, keyword, order)
@@ -42,6 +46,10 @@ const Home = () => {
 	useEffect(() => {
 		fetchMovies(searchParams.genre, searchParams.page, searchParams.movieType, searchParams.keyword, searchParams.order)
 	}, [searchParams.genre, searchParams.page, searchParams.movieType, searchParams.keyword, searchParams.order])
+
+	useEffect(() => {
+		localStorage.setItem('searchParams', JSON.stringify(searchParams))
+	}, [searchParams])
 
 	function searchByKeyword(event) {
 		event.preventDefault()
