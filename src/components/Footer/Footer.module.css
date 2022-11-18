@@ -21,7 +21,7 @@
 	text-decoration: none;
 	color: var(--primary);
 	background-color: transparent;
-	transition: color .1s linear, background .1s linear;
+	transition: color .1s linear, background-color .1s linear;
 }
 
 .footerLink:hover {
