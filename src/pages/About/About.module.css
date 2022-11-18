@@ -1,0 +1,23 @@
+.about {
+	height: 100%;
+}
+
+.title {
+	margin-bottom: 2rem;
+}
+
+.highlight {
+	color: var(--primary);
+}
+
+.aboutLink {
+	text-decoration: none;
+	color: var(--primary);
+	background-color: transparent;
+	transition: color .1s linear, background-color .1s linear;
+}
+
+.aboutLink:hover {
+	color: var(--text);
+	background-color: var(--primary);
+}
