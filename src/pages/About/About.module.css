@@ -3,7 +3,7 @@
 }
 
 .title {
-	margin-bottom: 2rem;
+	margin-bottom: var(--title-margin);
 }
 
 .highlight {
