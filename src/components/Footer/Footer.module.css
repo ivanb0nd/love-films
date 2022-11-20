@@ -32,3 +32,13 @@
 .reactIcon {
 	color: var(--primary)
 }
+
+@media screen and (max-width: 780px) {
+	.footerList {
+		flex-direction: column;
+	}
+
+	.footerItem:last-child {
+		margin-left: 0;
+	}
+}
