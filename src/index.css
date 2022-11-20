@@ -17,6 +17,7 @@
 	--text: #1f2937;
 	--footer-border: #ececec;
 	--scrollbar: #8b8b8b;
+	--mobile-menu: #dddddd;
 }
 
 /* Dark theme variables */
@@ -28,6 +29,7 @@
 	--text: #ececec;
 	--footer-border: #1d1d1d;
 	--scrollbar: #818181;
+	--mobile-menu: #292929;
 }
 
 /* Fonts */
@@ -51,6 +53,10 @@
 	padding: 0;
 	box-sizing: border-box;
 	font-family: 'Nunito', sans-serif;
+}
+
+html {
+	font-size: 16px;
 }
 
 body {
