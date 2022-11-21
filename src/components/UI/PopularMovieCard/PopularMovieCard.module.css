@@ -86,3 +86,15 @@
 	height: 50%;
 	background-color: #000;
 }
+
+@media screen and (max-width: 900px) {
+	.item:hover .poster img {
+		transform: none;
+	}
+}
+
+@media screen and (max-width: 420px) {
+	.poster {
+		height: 420px;
+	}
+}

@@ -44,3 +44,36 @@
 	height: auto;
 	opacity: 1;
 }
+
+@media screen and (max-width: 900px) {
+	.itemButton {
+		padding: .5rem 0;
+		margin: 0;
+	}
+
+	.sidebarItem.isOpen .optionList {
+		position: relative;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		gap: .75rem;
+	}
+
+	.option {
+		display: inline-flex;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.sidebarItem.isOpen .optionList {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		gap: .75rem;
+	}
+
+	.option {
+		display: inline-flex;
+	}
+}

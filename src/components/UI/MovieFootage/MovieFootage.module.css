@@ -16,3 +16,9 @@
 .emoji {
 	font-size: 2rem;
 }
+
+@media screen and (max-width: 900px) {
+	.title {
+		margin-bottom: 0;
+	}
+}

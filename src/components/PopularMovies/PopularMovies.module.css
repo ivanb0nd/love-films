@@ -5,3 +5,33 @@
 	gap: var(--grid-gap);
 	list-style: none;
 }
+
+@media screen and (max-width: 1340px) {
+	.moviesList {
+		grid-template-columns: repeat(5, minmax(190px, 1fr));
+	}
+}
+
+@media screen and (max-width: 1140px) {
+	.moviesList {
+		grid-template-columns: repeat(4, minmax(190px, 1fr));
+	}
+}
+
+@media screen and (max-width: 900px) {
+	.moviesList {
+		grid-template-columns: repeat(3, minmax(160px, 1fr));
+	}
+}
+
+@media screen and (max-width: 580px) {
+	.moviesList {
+		grid-template-columns: repeat(2, minmax(160px, 1fr));
+	}
+}
+
+@media screen and (max-width: 420px) {
+	.moviesList {
+		grid-template-columns: minmax(160px, 1fr);
+	}
+}

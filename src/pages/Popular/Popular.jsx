@@ -27,7 +27,7 @@ const Popular = () => {
 
 	return (
 		<main className={classes.popular}>
-			<h1 className={classes.header}>🔥 100 популярных фильмов</h1>
+			<h1 className={classes.title}>🔥 100 популярных фильмов</h1>
 			<PopularMovies movies={movies} />
 			<div ref={infiniteLoadingContainer}></div>
 			{isMoviesLoading && <div className={classes.loaderWrapper}>

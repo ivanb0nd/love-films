@@ -28,3 +28,19 @@
 .sidebarButton:hover {
 	background-color: var(--background-secondary);
 }
+
+@media screen and (max-width: 900px) {
+	.sidebarButton {
+		background-color: var(--background-secondary);
+		padding: .5rem 2rem;
+	}
+
+	.sidebarButton.active {
+		background-color: var(--primary);
+		color: #e3e3e3;
+	}
+
+	.sidebarButton.active::before {
+		display: none;
+	}
+}

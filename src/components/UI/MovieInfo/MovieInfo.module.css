@@ -1,18 +1,19 @@
 .container {
-	display: grid;
-	grid-template-columns: 320px 1fr;
+	display: flex;
 	gap: 4rem;
 }
 
 .movieInfo {
 	display: flex;
 	flex-direction: column;
+	flex: 1 1 content;
 }
 
-ю .left {
+.left {
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;
+	flex: 0 0 320px;
 }
 
 .poster {
@@ -43,7 +44,7 @@
 }
 
 .titleSection {
-	margin-bottom: .25rem;
+	margin-bottom: .5rem;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -89,7 +90,6 @@
 
 .promoDescription {
 	display: flex;
-	align-items: center;
 	gap: 1rem;
 	list-style: none;
 	font-size: 1.1rem;
@@ -140,4 +140,95 @@
 
 .kinopoiskLink:hover {
 	color: #ececec;
+}
+
+@media screen and (max-width: 1200px) {
+	.left {
+		flex-basis: auto;
+	}
+
+	.container {
+		flex-direction: column;
+		gap: 0;
+	}
+
+	.movieInfo {
+		background: var(--background);
+		padding: 1rem;
+		border-radius: var(--border-radius);
+		margin-top: -2rem;
+		z-index: 1;
+		align-items: center;
+	}
+
+	.poster {
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+		position: relative;
+	}
+
+	.poster::before {
+		content: '';
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		opacity: .9;
+		background: linear-gradient(to bottom, transparent, #000);
+		position: absolute;
+	}
+
+	.titleSection {
+		flex-direction: column;
+		gap: 1rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.rating {
+		order: -1;
+		align-self: flex-end;
+		font-size: 1.2rem;
+	}
+
+	.ratingIcon {
+		width: 20px;
+		height: 20px;
+	}
+
+	.promoDescription {
+		flex-direction: column;
+		text-align: center;
+		gap: .5rem;
+	}
+
+	.kinopoiskLink {
+		display: inline-block;
+		align-self: center;
+		position: relative;
+		text-decoration: none;
+		border: 2px solid var(--primary);
+		background-color: var(--primary);
+		color: #ececec;
+		border-radius: 5px;
+		padding: 0.5rem 1rem;
+		transition: color .1s linear;
+		z-index: 0;
+		margin-bottom: 1rem;
+	}
+
+	.kinopoiskLink::before {
+		content: none;
+	}
+}
+
+@media screen and (max-width: 700px) {
+	.poster {
+		height: 400px;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.poster {
+		height: 250px;
+	}
 }

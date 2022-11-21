@@ -43,3 +43,38 @@
 	display: flex;
 	justify-content: space-between;
 }
+
+@media screen and (max-width: 900px) {
+	.home {
+		grid-template-columns: 1fr;
+		grid-template-rows: auto 42px 1fr;
+	}
+
+	.searchForm {
+		grid-row: 2 / 3;
+		grid-column: span 1;
+		display: flex;
+	}
+
+	.sidebar {
+		grid-row: 1 / 2;
+		grid-column: span 1;
+	}
+
+	.main {
+		grid-row: 3 / 4;
+		grid-column: span 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		gap: 1.5rem;
+
+	}
+}
+
+@media screen and (max-width: 620px) {
+	.sortingFilters {
+		flex-direction: column;
+		gap: 1.5rem;
+	}
+}

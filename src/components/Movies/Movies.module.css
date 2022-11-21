@@ -15,3 +15,31 @@
 	text-align: center;
 	opacity: .2;
 }
+
+@media screen and (max-width: 1320px) {
+	.moviesList {
+		grid-template-columns: repeat(4, minmax(200px, 1fr));
+		gap: var(--grid-gap);
+	}
+}
+
+@media screen and (max-width: 1100px) {
+	.moviesList {
+		grid-template-columns: repeat(3, minmax(150px, 1fr));
+		gap: var(--grid-gap);
+	}
+}
+
+@media screen and (max-width: 620px) {
+	.moviesList {
+		grid-template-columns: repeat(2, minmax(150px, 1fr));
+		gap: var(--grid-gap);
+	}
+}
+
+@media screen and (max-width: 420px) {
+	.moviesList {
+		grid-template-columns: minmax(100px, 1fr);
+		gap: var(--grid-gap);
+	}
+}

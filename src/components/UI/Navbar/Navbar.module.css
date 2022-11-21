@@ -43,3 +43,9 @@
 .navigationLink:hover {
 	color: var(--primary);
 }
+
+@media screen and (max-width: 900px) {
+	.navigationList {
+		display: none;
+	}
+}

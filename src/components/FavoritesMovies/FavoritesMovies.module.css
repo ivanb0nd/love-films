@@ -10,3 +10,33 @@
 	opacity: .5;
 	padding: 10rem 0;
 }
+
+@media screen and (max-width: 1340px) {
+	.favoritesList {
+		grid-template-columns: repeat(5, minmax(190px, 1fr));
+	}
+}
+
+@media screen and (max-width: 1140px) {
+	.favoritesList {
+		grid-template-columns: repeat(4, minmax(190px, 1fr));
+	}
+}
+
+@media screen and (max-width: 900px) {
+	.favoritesList {
+		grid-template-columns: repeat(3, minmax(160px, 1fr));
+	}
+}
+
+@media screen and (max-width: 580px) {
+	.favoritesList {
+		grid-template-columns: repeat(2, minmax(160px, 1fr));
+	}
+}
+
+@media screen and (max-width: 420px) {
+	.favoritesList {
+		grid-template-columns: minmax(160px, 1fr);
+	}
+}

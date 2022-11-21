@@ -4,3 +4,9 @@
 	flex-direction: column;
 	gap: .5rem;
 }
+
+@media screen and (max-width: 900px) {
+	.sidebar {
+		padding: 0;
+	}
+}

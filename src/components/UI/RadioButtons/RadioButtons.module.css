@@ -1,3 +1,7 @@
+.radioButtons {
+	display: flex;
+}
+
 .button {
 	position: relative;
 	background-color: var(--primary);
@@ -39,10 +43,18 @@
 	background: var(--primary-darker);
 }
 
-.radioButtons {
-	display: flex;
-}
-
 .buttonInput {
 	appearance: none;
+}
+
+@media screen and (max-width: 620px) {
+	.button {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+	}
+
+	.button::before {
+		display: none;
+	}
 }

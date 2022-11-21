@@ -12,7 +12,10 @@ const MovieInfo = ({ movieInfo }) => {
 		<div className={classes.container}>
 			<div className={classes.left}>
 				<div className={classes.poster}>
-					<img src={movieInfo.posterUrlPreview} alt="Постер фильма" />
+					<picture>
+						<source srcSet={movieInfo.coverUrl} media="(max-width: 1200px)" />
+						<img src={movieInfo.posterUrlPreview} alt="Постер фильма" />
+					</picture>
 				</div>
 			</div>
 			<div className={classes.movieInfo}>

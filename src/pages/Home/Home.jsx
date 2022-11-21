@@ -14,7 +14,11 @@ import classes from './Home.module.css'
 const Home = () => {
 	const [movies, setMovies] = useState([])
 	const [totalPages, setTotalPages] = useState(1)
-	const [formingKeyword, setFormingKeyword] = useState('')
+	const [formingKeyword, setFormingKeyword] = useState(() => {
+		const savedParams = localStorage.getItem('searchParams')
+		const initialParams = JSON.parse(savedParams)
+		return initialParams.keyword || ''
+	})
 	const [searchParams, setSearchParams] = useState(() => {
 		const savedParams = localStorage.getItem('searchParams')
 		const initialParams = JSON.parse(savedParams)
@@ -60,7 +64,7 @@ const Home = () => {
 
 	return (
 		<div className={classes.home}>
-			<form onSubmit={searchByKeyword} className={classes.searchForm}>
+			<form onBlur={searchByKeyword} onSubmit={searchByKeyword} className={classes.searchForm}>
 				<CustomInput
 					value={formingKeyword}
 					onChange={(event) => setFormingKeyword(event.target.value)}
