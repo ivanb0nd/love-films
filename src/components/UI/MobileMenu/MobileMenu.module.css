@@ -1,0 +1,80 @@
+.mobileMenu {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background: var(--mobile-menu);
+	border-top: 1px solid rgba(0, 0, 0, .1);
+	z-index: 9999;
+}
+
+.menu {
+	display: flex;
+	justify-content: space-around;
+	list-style: none;
+	padding: 0.25rem 0;
+}
+
+.link {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-size: .8rem;
+	text-decoration: none;
+	color: var(--text);
+	gap: .25rem;
+}
+
+.icon {
+	width: 30px;
+	height: 30px;
+}
+
+.favoriteIcon {
+	stroke: var(--mobile-menu-icon);
+}
+
+.homeIcon {
+	fill: var(--mobile-menu-icon);
+}
+
+.popularIcon {
+	fill: var(--mobile-menu-icon);
+}
+
+.aboutIcon {
+	fill: var(--mobile-menu-icon);
+}
+
+.link.active .favoriteIcon {
+	stroke: var(--primary);
+}
+
+.link.active .homeIcon {
+	fill: var(--primary);
+}
+
+.link.active .popularIcon {
+	fill: var(--primary);
+}
+
+.link.active .aboutIcon {
+	fill: var(--primary);
+}
+
+@media screen and (min-width: 900px) {
+	.mobileMenu {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.link {
+		font-size: .7rem;
+	}
+
+	.icon {
+		width: 25px;
+		height: 25px;
+	}
+}
