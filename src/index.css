@@ -6,6 +6,7 @@
 	--border-radius: .65rem;
 	--main-padding: 2.5rem;
 	--grid-gap: 1rem;
+	--title-margin: 2rem;
 }
 
 /* Light theme variables */
@@ -17,7 +18,8 @@
 	--text: #1f2937;
 	--footer-border: #ececec;
 	--scrollbar: #8b8b8b;
-	--mobile-menu: #dddddd;
+	--mobile-menu: #ebebeb;
+	--mobile-menu-icon: #7f7f7f;
 }
 
 /* Dark theme variables */
@@ -30,6 +32,7 @@
 	--footer-border: #1d1d1d;
 	--scrollbar: #818181;
 	--mobile-menu: #292929;
+	--mobile-menu-icon: #d4d4d4;
 }
 
 /* Fonts */
@@ -87,4 +90,28 @@ body {
 ::-webkit-scrollbar-thumb {
 	background: var(--scrollbar);
 	border-radius: .25rem;
+}
+
+@media screen and (max-width: 900px) {
+	#root {
+		padding-bottom: 60px;
+		--main-padding: 2rem;
+		--title-margin: 1.5rem;
+		--border-radius: .4rem;
+	}
+
+	html {
+		font-size: 15px;
+	}
+
+	h1 {
+		font-size: 1.7rem;
+	}
+}
+
+@media screen and (max-width: 700px) {
+	#root {
+		--main-padding: 1rem;
+		--title-margin: 1rem;
+	}
 }
