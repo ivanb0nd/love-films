@@ -8,7 +8,6 @@ i# LoveFilms
 * React
 * React Router
 * Axios
-* Swiper Slider
 
 🔧 API используемый в проекте [Kinopoisk Api Unofficial](https://kinopoiskapiunofficial.tech/)
 
