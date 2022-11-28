@@ -14,16 +14,12 @@ import classes from './Home.module.css'
 const Home = () => {
 	const [movies, setMovies] = useState([])
 	const [totalPages, setTotalPages] = useState(1)
-	const [formingKeyword, setFormingKeyword] = useState(() => {
-		const savedParams = localStorage.getItem('searchParams')
-		const initialParams = JSON.parse(savedParams)
-		return initialParams.keyword || ''
-	})
 	const [searchParams, setSearchParams] = useState(() => {
 		const savedParams = localStorage.getItem('searchParams')
 		const initialParams = JSON.parse(savedParams)
 		return initialParams || { page: 1, genre: 3, movieType: 'ALL', keyword: '', order: 'NUM_VOTE' }
 	})
+	const [formingKeyword, setFormingKeyword] = useState(searchParams.keyword)
 
 	const [fetchMovies, isMoviesLoading, moviesError] = useFetching(async (genre, page, movieType, keyword, order) => {
 		const response = await movieAPI.getMoviesByGenre(genre, page, movieType, keyword, order)
