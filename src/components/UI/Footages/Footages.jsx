@@ -10,7 +10,7 @@ const FootageSlider = ({ footageData }) => {
 				return <div key={footage.imageUrl} className={classes.footage}>
 					<picture>
 						<source srcSet={footage.imageUrl} media="(min-width: 900px)" />
-						<img src={footage.previewUrl} alt="" />
+						<img src={footage.previewUrl} alt="Кадр из фильма" />
 					</picture>
 				</div>
 			})}
