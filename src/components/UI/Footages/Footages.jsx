@@ -1,4 +1,5 @@
 import React from 'react'
+import 'swiper/css'
 import classes from './Footages.module.css'
 
 const FootageSlider = ({ footageData }) => {

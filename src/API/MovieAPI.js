@@ -1,11 +1,11 @@
 import axios from 'axios';
 
-const TEST_API_KEY = "1806f13a-4c96-4856-88d4-5362eefee412";
+const API_KEY = process.env.REACT_APP_MOVIES_API_KEY;
 
 const onlineMovieAPI = axios.create({
 	baseURL: 'https://kinopoiskapiunofficial.tech/api/v2.2/',
 	headers: {
-		'X-API-KEY': TEST_API_KEY,
+		'X-API-KEY': API_KEY,
 		'Content-Type': 'application/json',
 	}
 })
