@@ -11,7 +11,6 @@ const Popular = () => {
 	const [totalPages, setTotalPages] = useState(1)
 	const [page, setPage] = useState(1)
 	const infiniteLoadingContainer = useRef()
-	const observer = useRef()
 
 	const [fetchMovies, isMoviesLoading, movieError] = useFetching(async (page) => {
 		const response = await movieAPI.getPopularMovies(page)
