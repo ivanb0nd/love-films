@@ -3,7 +3,7 @@
 >Приложение для поиска и составления коллекции фильмов и сериалов
 
 <div align="center">
-	<a href="love-films.vercel.app" target="_blank">
+	<a href="https://love-films.vercel.app" target="_blank">
 		<img src="docs/home-screenshot.png" alt="главная страница приложения" />
 		<b>Посмотреть в живую</b>
 	</a>
