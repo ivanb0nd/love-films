@@ -5,7 +5,7 @@ import classes from './Favorites.module.css';
 
 const Favorites = () => {
 	const { favorites, setFavorites } = useContext(FavoritesContext)
-	console.log(favorites)
+
 	return (
 		<main className={classes.favorites}>
 			<h1 className={classes.title}>⭐ Избранное</h1>

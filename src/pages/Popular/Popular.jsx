@@ -15,7 +15,6 @@ const Popular = () => {
 	const [fetchMovies, isMoviesLoading, movieError] = useFetching(async (page) => {
 		const response = await movieAPI.getPopularMovies(page)
 		setMovies([...movies, ...response.films])
-		console.log(response.films)
 		setTotalPages(response.pagesCount)
 	})
 
