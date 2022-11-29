@@ -11,14 +11,18 @@ import './styles/App.css'
 
 
 function App() {
-	const [theme, setTheme] = useState('light')
+	const [theme, setTheme] = useState(() => {
+		const savedTheme = localStorage.getItem('theme');
+		return savedTheme || 'dark'
+	})
+
 	const [favorites, setFavorites] = useState(() => {
 		const saved = localStorage.getItem('favorites')
 		const initialFavorites = JSON.parse(saved)
 		return initialFavorites || []
 	})
 
-	useTheme(theme, setTheme)
+	useTheme(theme)
 
 	useEffect(() => {
 		localStorage.setItem('favorites', JSON.stringify(favorites))

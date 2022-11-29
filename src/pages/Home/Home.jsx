@@ -53,9 +53,9 @@ const Home = () => {
 
 	function searchByKeyword(event) {
 		event.preventDefault()
-		setMovies([])
+		setFormingKeyword(formingKeyword.trim())
 		setTotalPages(1)
-		setSearchParams({ ...searchParams, keyword: formingKeyword, page: 1 })
+		setSearchParams({ ...searchParams, keyword: formingKeyword.trim(), page: 1 })
 	}
 
 	return (

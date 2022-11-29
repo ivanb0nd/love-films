@@ -1,12 +1,6 @@
 import { useEffect } from "react"
 
-export const useTheme = (theme, setTheme) => {
-	useEffect(() => {
-		if (localStorage.getItem('theme')) {
-			setTheme(localStorage.getItem('theme'))
-		}
-	}, [])
-
+export const useTheme = (theme) => {
 	useEffect(() => {
 		if (theme === 'light') {
 			document.documentElement.classList.remove('dark')

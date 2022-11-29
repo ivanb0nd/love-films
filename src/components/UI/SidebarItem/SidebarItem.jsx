@@ -1,9 +1,17 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import SidebarButton from '../Buttons/SidebarButton/SidebarButton'
 import classes from './SidebarItem.module.css'
 
 const SidebarItem = ({ item, genre, changeGenre }) => {
-	const [isOpen, setIsOpen] = useState(true)
+	const [isOpen, setIsOpen] = useState(() => {
+		const sidebarState = JSON.parse(localStorage.getItem('sidebar'))
+		return sidebarState || false
+	})
+
+	useEffect(() => {
+		localStorage.setItem('sidebar', isOpen)
+	}, [isOpen])
+
 
 	return (
 		<div className={isOpen ? `${classes.sidebarItem} ${classes.isOpen}` : `${classes.sidebarItem}`}>

@@ -11,7 +11,7 @@ const FavoriteMovieCard = ({ movie, favorites, setFavorites }) => {
 		<div className={classes.item}>
 			<div className={classes.movie}>
 				<div className={classes.poster}>
-					<Link to={`/movie/${movie.kinopoiskId}`}>
+					<Link to={`/movie/${movie.kinopoiskId || movie.id}`}>
 						<img src={movie.posterUrlPreview} alt={movie.type === 'TV_SERIES' ? `Постер сериала ${movie.nameRu}` : `Постер фильма ${movie.nameRu}`} />
 					</Link>
 					<button onClick={() => toggleFavorite(movie)} className={classes.deleteButton}></button>
